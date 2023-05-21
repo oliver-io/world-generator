@@ -10,3 +10,4 @@ dist
 yarn-error.log
 .idea/**
 .env
+./.generated_content
