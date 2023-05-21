@@ -9,3 +9,4 @@ dist
 **/yalc.lock
 yarn-error.log
 .idea/**
+.env
