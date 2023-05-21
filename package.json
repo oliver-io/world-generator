@@ -1,0 +1,51 @@
+{
+	"name": "@curiecode/world-generator",
+	"version": "1.0.0",
+	"license": "MIT",
+	"engines": {
+		"node": ">=10"
+	},
+	"bin": "dist/app.js",
+	"type": "module",
+	"scripts": {
+		"build": "rm -rf dist && tsc",
+		"start": "yarn build && NODE_NO_WARNINGS=1 tsx ./world/app.tsx",
+		"explorer": "NODE_NO_WARNINGS=1 tsx ./src/world/explorer/explorer.tsx",
+		"regenerate": "REGENERATE=true yarn generate",
+		"pretest": "npm run build",
+		"test:pipe": "tsx ./world/tools/runPipelineComponent"
+	},
+	"dependencies": {
+		"@babel/preset-typescript": "^7.18.6",
+		"@jupiterone/typescript-tools": "^18.1.0",
+		"typescript": "^5.0.4",
+		"@curiecode/lamechain": "^0.0.4196",
+		"@curiecode/structurators": "^0.0.1",
+		"@types/dotenv": "^8.2.0",
+		"@types/fast-levenshtein": "^0.0.2",
+		"@types/ink": "^2.0.3",
+		"@types/node": "^20.2.1",
+		"@types/pino": "^7.0.5",
+		"@types/pluralize": "^0.0.29",
+		"@types/uuid": "^9.0.0",
+		"chatgpt": "^4.4.1",
+		"dotenv": "^16.0.3",
+		"fast-levenshtein": "^3.0.0",
+		"ink": "^4.2.0",
+		"ink-text-input": "^5.0.1",
+		"ioredis": "^5.3.2",
+		"minimist": "^1.2.8",
+		"p-map": "^5.5.0",
+		"pluralize": "^8.0.0",
+		"react": "^18.2.0",
+		"uuid": "^9.0.0"
+	},
+	"jest": {
+		"preset": "ts-jest",
+		"testEnvironment": "node",
+		"transform": {
+			"^.+\\.(ts|tsx)?$": "ts-jest",
+			"^.+\\.(js|jsx)$": "babel-jest"
+		}
+	}
+}
